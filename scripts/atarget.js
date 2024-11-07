@@ -47,10 +47,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
 
-      gtag('config', 'GTM-5J5SV9X6');
+   /*   gtag('config', 'GTM-5J5SV9X6');
       gtag('event', 'action_name', {'eventCategory': 'target',
           'eventAction': experienceNames, 'eventLabel': activityNames
-      });
+      }); */
     });
 
     function isEmpty(val) {
