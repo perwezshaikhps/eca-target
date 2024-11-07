@@ -34,11 +34,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
 
       var activityNames = [];
+			 var activityId = [];
       var experienceNames = [];
       var uniqueTokens = distinct(tokens);
 
       uniqueTokens.forEach(function(token) {
         activityNames.push(token["activity.name"]);
+				activityId.push(token["activity.id"]);
         experienceNames.push(token["experience.name"]);
       });
 
