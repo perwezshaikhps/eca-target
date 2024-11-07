@@ -28,14 +28,20 @@ window.adobe=window.adobe||{},window.adobe.target=function(){"use strict";var t=
       }
 
       var activityNames = [];
-			 var activityId = [];
+			var activityId = [];
       var experienceNames = [];
+			var experienceId = [];
+			var offerName = [];
+      var offerId = [];
       var uniqueTokens = distinct(tokens);
 
       uniqueTokens.forEach(function(token) {
         activityNames.push(token["activity.name"]);
 				activityId.push(token["activity.id"]);
         experienceNames.push(token["experience.name"]);
+				experienceId.push(token["experience.id"]);
+				offerName.push(token["offer.name"]);
+        offerId.push(token["offer.id"]);
       });
 
 			window.dataLayer = window.dataLayer || [];
@@ -43,7 +49,10 @@ window.adobe=window.adobe||{},window.adobe.target=function(){"use strict";var t=
 				dataLayer.push({
 				 activityNames: activityNames,
          activityId: activityId,
-        experienceNames: experienceNames
+         experienceNames: experienceNames,
+				 experienceId: experienceId,
+         offerName: offerName,
+         offerId: offerId
 			});}
 			
 			 responseTokenDatalayer();
