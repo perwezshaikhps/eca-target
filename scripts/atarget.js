@@ -45,18 +45,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       });
 
 			window.dataLayer = window.dataLayer || [];
-      function responseTokenDatalayer(){dataLayer.push({
+      function responseTokenDatalayer(){
+				dataLayer.push({
 				 activityNames: activityNames,
          activityId: activityId,
         experienceNames: experienceNames
 			});}
-
+			
 			 responseTokenDatalayer();
-
-   /*   gtag('config', 'GTM-5J5SV9X6');
-      gtag('event', 'action_name', {'eventCategory': 'target',
-          'eventAction': experienceNames, 'eventLabel': activityNames
-      }); */
+			
     });
 
     function isEmpty(val) {
