@@ -27,32 +27,33 @@ window.adobe=window.adobe||{},window.adobe.target=function(){"use strict";var t=
         return;
       }
 
-      var activityNames = [];
+    /*  var activityNames = [];
 			var activityId = [];
       var experienceNames = [];
 			var experienceId = [];
 			var offerName = [];
-      var offerId = [];
+      var offerId = []; */
       var uniqueTokens = distinct(tokens);
 
-      uniqueTokens.forEach(function(token) {
+     /* uniqueTokens.forEach(function(token) {
         activityNames.push(token["activity.name"]);
 				activityId.push(token["activity.id"]);
         experienceNames.push(token["experience.name"]);
 				experienceId.push(token["experience.id"]);
 				offerName.push(token["offer.name"]);
         offerId.push(token["offer.id"]);
-      });
+      }); */
 
 			window.dataLayer = window.dataLayer || [];
       function responseTokenDatalayer(){
 				dataLayer.push({
-				 activityNames: activityNames,
-         activityId: activityId,
-         experienceNames: experienceNames,
-				 experienceId: experienceId,
-         offerName: offerName,
-         offerId: offerId
+				event: 'targetResponse.data',
+				activityName: token["activity.name"],
+        activityId: token["activity.id"],
+        experienceName: token["experience.name"],
+        experienceId: token["experience.id"],
+        offerName: token["offer.name"],
+      offerId: token["offer.id"]
 			});}
 			
 			 responseTokenDatalayer();
