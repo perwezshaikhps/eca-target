@@ -21,44 +21,47 @@ window.adobe=window.adobe||{},window.adobe.target=function(){"use strict";var t=
 
 
     document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function(e) {
-      var tokens = e.detail.responseTokens;
+    var tokens = e.detail.responseTokens;
 
-      if (isEmpty(tokens)) {
+    if (isEmpty(tokens)) {
         return;
-      }
-      var uniqueTokens = distinct(tokens);
-			window.dataLayer = window.dataLayer || [];
-			
-		  uniqueTokens.forEach(function(token) {
-				dataLayer.push({
-				event: 'targetResponse.data',
-				activityName: token["activity.name"],
-        activityId: token["activity.id"],
-        experienceName: token["experience.name"],
-        experienceId: token["experience.id"],
-        offerName: token["offer.name"],
-        offerId: token["offer.id"]
-			});
-		  });
-	});
-
-    function isEmpty(val) {
-      return (val === undefined || val == null || val.length <= 0) ? true : false;
     }
+    var uniqueTokens = distinct(tokens);
+    window.dataLayer = window.dataLayer || [];
 
-    function key(obj) {
-       return Object.keys(obj)
-      .map(function(k) { return k + "" + obj[k]; })
-      .join("");
-    }
+    uniqueTokens.forEach(function(token) {
+        dataLayer.push({
+            event: 'targetResponse.data',
+            activityName: token["activity.name"],
+            activityId: token["activity.id"],
+            experienceName: token["experience.name"],
+            experienceId: token["experience.id"],
+            offerName: token["offer.name"],
+            offerId: token["offer.id"]
+        });
+    });
+});
 
-    function distinct(arr) {
-      var result = arr.reduce(function(acc, e) {
+function isEmpty(val) {
+    return (val === undefined || val == null || val.length <= 0) ? true : false;
+}
+
+function key(obj) {
+    return Object.keys(obj)
+        .map(function(k) {
+            return k + "" + obj[k];
+        })
+        .join("");
+}
+
+function distinct(arr) {
+    var result = arr.reduce(function(acc, e) {
         acc[key(e)] = e;
         return acc;
-      }, {});
+    }, {});
 
-      return Object.keys(result)
-      .map(function(k) { return result[k]; });
-    }
-
+    return Object.keys(result)
+        .map(function(k) {
+            return result[k];
+        });
+}
