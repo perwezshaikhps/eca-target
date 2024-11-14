@@ -26,26 +26,10 @@ window.adobe=window.adobe||{},window.adobe.target=function(){"use strict";var t=
       if (isEmpty(tokens)) {
         return;
       }
-
-    /*  var activityNames = [];
-			var activityId = [];
-      var experienceNames = [];
-			var experienceId = [];
-			var offerName = [];
-      var offerId = []; */
       var uniqueTokens = distinct(tokens);
-
-     /* uniqueTokens.forEach(function(token) {
-        activityNames.push(token["activity.name"]);
-				activityId.push(token["activity.id"]);
-        experienceNames.push(token["experience.name"]);
-				experienceId.push(token["experience.id"]);
-				offerName.push(token["offer.name"]);
-        offerId.push(token["offer.id"]);
-      }); */
-
 			window.dataLayer = window.dataLayer || [];
-      function responseTokenDatalayer(){
+			
+		  uniqueTokens.forEach(function(token) {
 				dataLayer.push({
 				event: 'targetResponse.data',
 				activityName: token["activity.name"],
@@ -53,12 +37,10 @@ window.adobe=window.adobe||{},window.adobe.target=function(){"use strict";var t=
         experienceName: token["experience.name"],
         experienceId: token["experience.id"],
         offerName: token["offer.name"],
-      offerId: token["offer.id"]
-			});}
-			
-			 responseTokenDatalayer();
-			
-    });
+        offerId: token["offer.id"]
+			});
+		  });
+	});
 
     function isEmpty(val) {
       return (val === undefined || val == null || val.length <= 0) ? true : false;
