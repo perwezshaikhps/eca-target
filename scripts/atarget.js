@@ -29,7 +29,7 @@ window.adobe=window.adobe||{},window.adobe.target=function(){"use strict";var t=
     var uniqueTokens = distinct(tokens);
     window.dataLayer = window.dataLayer || [];
 
-    uniqueTokens.forEach(function(tokens) {
+    uniqueTokens.forEach(function(token) {
         dataLayer.push({
             event: 'targetResponse.data',
             activityName: token["activity.name"],
