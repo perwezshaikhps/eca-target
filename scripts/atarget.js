@@ -1,7 +1,7 @@
-function targetPageParams() {
+/*function targetPageParams() {
     return "param1=value1¶m2=value2&p3=hello%20world";
 }
-
+*/
 //
 /**
  * @license
