@@ -1,7 +1,9 @@
-/*function targetPageParams() {
-    return "param1=value1¶m2=value2&p3=hello%20world";
-}
-*/
+
+        function targetPageParams() {
+          return "p1=v1&p2=v2&p3=hello%20world";
+        }
+
+
 //
 /**
  * @license
