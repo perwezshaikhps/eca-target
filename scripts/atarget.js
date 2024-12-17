@@ -1,9 +1,9 @@
-
+/*
         function targetPageParams() {
           return "p1=v1&p2=v2&p3=hello%20world";
         }
 
-
+*/
 //
 /**
  * @license
