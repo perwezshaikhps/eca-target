@@ -4,9 +4,43 @@
 <link rel="stylesheet" href="/styles/styles.css"/>
 
 <script type="text/javascript">
-       targetPageParams = function() {
-        return ["p1=v1", "b=2", "c=San Francisco"];
-      };
+// Initialize the dataLayer object
+window.dataLayer = window.dataLayer || [
+    // You can add any initial dataLayer items here if needed
+    { "sampleKey": "sampleValue" }
+];
+
+// Define the targetPageParams function
+function targetPageParams() {
+    var dataObj = {
+        "p1": "v1",
+        "b": "2",
+        "c": "San Francisco"
+    };
+
+    // Iterate over the dataLayer object and filter valid entries
+    if (dataLayer != null && dataLayer != undefined && typeof dataLayer === "object" && dataLayer != "") {
+        for (var data in dataLayer) {
+            if (
+                dataLayer[data] != null &&
+                dataLayer[data] != undefined &&
+                typeof dataLayer[data] === "string" &&
+                dataLayer[data].length < 70
+            ) {
+                dataObj[data] = dataLayer[data];
+            }
+        }
+    }
+
+    return dataObj;
+}
+
+// Example usage of the targetPageParams function
+console.log(targetPageParams());
+
+
+
+       
     </script>
 
 <!--
